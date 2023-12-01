@@ -34,3 +34,26 @@
 #### Person:
 * Фрекен Снорк
 > Челка
+
+
+## Interface Actions:
+### Abstract class Human_Actions:
+* Проснулся
+* Свистят
+* Разглядеть
+### Abstract class Nature_Actions:
+* Клубился
+* Выделялись
+* Ставшие белыми
+
+## Interface Nature:
+### Abstract class Material:
+* Деревья -> Стволы деревьев
+* Abstract class мхи-лишайники:
+** Мхи
+** Лишайники
+### Abstract class Non-Materials:
+* Холод
+* Ночь
+* Туман
+
