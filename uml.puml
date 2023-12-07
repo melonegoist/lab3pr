@@ -1,0 +1,86 @@
+@startuml
+interface edu.text.TextFunc {
+~ int count_letters(String)
+~ int count_words(String)
+}
+class edu.entity.Nature {
+~ String name
+- String qualities
+- Activity activity
++ void set_state(String)
++ void set_activities(Activity)
++ String get_name()
++ String start_action()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+interface edu.entity.Entity_types {
+~ void set_state(String)
+~ void set_activities(Activity)
+~ String get_name()
+~ String start_action()
+}
+class edu.text.TextEdit {
++ {static} boolean is_closed
+~ String new_text
++ String add_text(String,String)
++ int count_letters(String)
++ int count_words(String)
+}
+enum edu.entity.Entity {
++  HUMAN
++  NATURE
+}
+class edu.text.TextRemover {
++ {static} int words_to_remove
+~ String new_text
++ String start(String)
++ int count_letters(String)
++ int count_words(String)
+}
+class edu.action.Full_action {
+~ String name
++ String interact()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+class edu.Main {
++ {static} void main(String[])
+}
+abstract class edu.action.Activity {
+# String[] dependencies
++ {abstract}String interact()
++ void set_dependencies(String[])
++ int hashCode()
++ String toString()
+}
+class edu.action.Action {
+~ String name
++ String interact()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+class edu.entity.Human {
+~ String name
+- String gender
+- Activity activity
++ void set_state(String)
++ void set_activities(Activity)
++ String get_name()
++ String start_action()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+
+
+edu.entity.Entity_types <|.. edu.entity.Nature
+edu.text.TextFunc <|.. edu.text.TextEdit
+edu.text.TextFunc <|.. edu.text.TextRemover
+edu.action.Activity <|-- edu.action.Full_action
+edu.action.Activity <|-- edu.action.Action
+edu.entity.Entity_types <|.. edu.entity.Human
+@enduml
